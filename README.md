@@ -60,3 +60,11 @@ service GreetService {
   rpc Greet(GreetRequest) returns (GreetResponse) {}
 }
 ```
+
+### Why `ProtoBuff`?
+
+- language agnostic
+- small payload
+- Easy API evolution
+
+You should be familiar with Protobuff before starting this course! 
