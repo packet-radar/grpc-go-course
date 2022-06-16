@@ -68,3 +68,5 @@ service GreetService {
 - Easy API evolution
 
 You should be familiar with Protobuff before starting this course! 
+
+Protobuff stands for `Protocol Buffer` 
