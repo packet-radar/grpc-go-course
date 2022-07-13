@@ -90,3 +90,41 @@ On the other hand... HTTP2:
 ## Types of API in gRPC
 
 <img src="./assets/types-of-grpc.png">
+
+### Unary
+
+The closest resembelence to REST API. The client will send one request, and server will send one response. If we are utilizing a tradital
+
+### Server Streaming
+
+The client will send one request, and the server can send one **or more** responses.
+
+### Client Streaming
+
+The client sends one **or more** requests, and the server sends only one response.
+
+### Bi directional streaming
+
+Combo of server streaming & client streaming.
+
+```proto
+service GreetService {
+  // Unary
+  rpc Greet(GreetRequest) returns (GreetResponse) {};
+
+  // Server Streaming
+  rpc GreetManyTimes(GreetRequest) returns (stream GreetResponse) {};
+
+  // Client Streaming
+  rpc LongGreet(stream GreetRequest) returns (GreetResponse) {};
+
+  // Bi directional streaming
+  rpc GreetEveryone(stream GreetRequest) returns (stream GreetResponse) {};
+}
+```
+
+## Security in gRPC
+
+- Schema based serialization
+- Easy SSL certificates initialization
+- Interceptors for Auth
